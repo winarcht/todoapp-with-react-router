@@ -1,0 +1,70 @@
+#todo-app {
+  width: 40%;
+  margin: 1em auto;
+  box-shadow: 0 .125em .5em .125em #AAA; }
+
+#addtodo-form,
+#todo-list,
+#footer {
+  background-color: #555;
+  color: #FFF;
+  font-family: Arial, Helvetica, sans-serif; }
+
+#addtodo-form {
+  padding: 0; }
+  #addtodo-form,
+  #addtodo-form input[name="task"] {
+    margin: 0;
+    width: 100%; }
+  #addtodo-form input[name="task"] {
+    box-sizing: border-box;
+    padding: .85em .75em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    outline: none;
+    border: 1px solid #BBB; }
+  #addtodo-form input[type="submit"] {
+    display: none; }
+
+#todo-list {
+  font-size: 1em; }
+  #todo-list ul {
+    margin: 0;
+    padding: 0; }
+  #todo-list li {
+    border-bottom: 1px solid #999;
+    user-select: none; }
+    #todo-list li.completed {
+      text-decoration: line-through;
+      font-style: italic;
+      font-weight: bold; }
+  #todo-list label {
+    cursor: pointer;
+    display: block;
+    padding: .85em .75em; }
+  #todo-list input[type="checkbox"] {
+    display: none; }
+
+#footer {
+  padding: 0.85em 0.75em;
+  font-size: 0.85em;
+  overflow: hidden; }
+  #footer #status-bar {
+    float: left; }
+  #footer a,
+  #footer span {
+    border: 1px solid #555;
+    border-radius: 3px;
+    margin-left: 0.6em;
+    padding: 2px 4px;
+    color: #FFF;
+    text-decoration: none;
+    cursor: pointer; }
+  #footer #filter-list {
+    float: right; }
+    #footer #filter-list a:hover {
+      border-color: #999; }
+    #footer #filter-list span {
+      border-color: #AAA; }
+
+/*# sourceMappingURL=App.css.map */
