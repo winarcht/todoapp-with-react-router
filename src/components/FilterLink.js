@@ -2,28 +2,19 @@
  * A single filter link.
  */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class FilterLink extends Component {
-
- /**
- * When clicked, call the parent handler to set the selected filter.
- * see "setFilter" in App.js.
- */
-	handleClick(e) {
-		e.preventDefault();
-
-		this.props._onClick(e.target.name);
-	}
 
 	render() {
 		const { selectedFilter, children } = this.props;
 
-		if (children === selectedFilter) {
+		if (children.toLowerCase() === selectedFilter) {
 			return <span>{children}</span>
 		}
 
 		return (
-			<a name={children} onClick={this.handleClick.bind(this)}>{children}</a>
+			<Link name={children} to={`/${children.toLowerCase()}`}>{children}</Link>
 		);
 	}
 

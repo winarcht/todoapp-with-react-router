@@ -33,12 +33,12 @@ class Footer extends Component {
 */
 
 	render() {
-		const { filters, selectedFilter, _onClick, tasks } = this.props;
+		const { filters, selectedFilter, tasks } = this.props;
 
 		return (
 			<div id="footer">
 				<StatusBar tasks={tasks} selectedFilter={selectedFilter} />
-				<FilterList filters={filters} selectedFilter={selectedFilter} _onClick={_onClick} />
+				<FilterList filters={filters} selectedFilter={selectedFilter} />
 			</div>
 		);
 	}

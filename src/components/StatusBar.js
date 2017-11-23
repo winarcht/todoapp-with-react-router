@@ -15,12 +15,12 @@ class StatusBar extends Component {
 		let status = '';
 
 		switch (selectedFilter) {
-			case FILTERS.ACTIVE:
+			case FILTERS.ACTIVE.toLowerCase():
 				status = `${tasks.length} task(s) left`;
 
 				break;
 
-			case FILTERS.DONE:
+			case FILTERS.DONE.toLowerCase():
 				status = `${tasks.length} task(s) done`;
 
 				break;

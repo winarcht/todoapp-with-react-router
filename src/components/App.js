@@ -21,12 +21,23 @@ class App extends Component {
     super(props);
 
     /**
+     * Get the initial URL when loaded,
+     * and set it as the selected filter
+     * eg. /Active -> selectedFilter: 'active'
+     */
+    let selectedFilter = FILTERS.ALL.toLowerCase();
+
+    if (typeof this.props.match.params.filter !== 'undefined') {
+      selectedFilter = this.props.match.params.filter.toLowerCase();
+    }
+
+    /**
      * Set the initial state.
      */
     this.state = {
       taskBox: '',
       todos: [],
-      selectedFilter: FILTERS.ALL
+      selectedFilter
     };
 
     /**
@@ -101,6 +112,16 @@ class App extends Component {
     });    
   }
 
+  /**
+   * Everytime the URL changes (in this case the props.match.params.filter),
+   * the selectedFilter should be changed as well.
+   */
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.filter !== nextProps.match.params.filter) {
+      this.setFilter(nextProps.match.params.filter.toLowerCase());
+    }
+  }
+
   render() {
     const { taskBox, todos, selectedFilter } = this.state;
     
@@ -110,11 +131,11 @@ class App extends Component {
     let visibleTodos = [];
 
     switch (selectedFilter) {
-      case FILTERS.ACTIVE:
+      case FILTERS.ACTIVE.toLowerCase():
         visibleTodos = todos.filter((todo) => !todo.completed);
         break;
 
-      case FILTERS.DONE:
+      case FILTERS.DONE.toLowerCase():
         visibleTodos = todos.filter((todo) => todo.completed);
         break;
 
@@ -127,7 +148,7 @@ class App extends Component {
       <div id="todo-app">
         <AddTodo taskBox={taskBox} _onChange={this.changeTaskBox} _onSubmit={this.appendTodo} />
         <TodoList tasks={visibleTodos} _onClick={this.toggleTodo} />
-        <Footer filters={FILTERS} tasks={visibleTodos} selectedFilter={selectedFilter} _onClick={this.setFilter} />
+        <Footer filters={FILTERS} tasks={visibleTodos} selectedFilter={selectedFilter} />
       </div>
     );
   }

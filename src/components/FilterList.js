@@ -10,10 +10,10 @@ import FilterLink from './FilterLink';
 class FilterList extends Component {
 
 	render() {
-		const { filters, selectedFilter, _onClick } = this.props;
+		const { filters, selectedFilter } = this.props;
 
 		let list = Object.keys(filters).map((key) => {
-			return <FilterLink key={key} selectedFilter={selectedFilter} _onClick={_onClick}>{filters[key]}</FilterLink>
+			return <FilterLink key={key} selectedFilter={selectedFilter}>{filters[key]}</FilterLink>
 		});
 
 		return (
