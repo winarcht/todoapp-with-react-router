@@ -1,7 +1,14 @@
+/**
+ * A single filter link.
+ */
 import React, { Component } from 'react';
 
 class FilterLink extends Component {
 
+ /**
+ * When clicked, call the parent handler to set the selected filter.
+ * see "setFilter" in App.js.
+ */
 	handleClick(e) {
 		e.preventDefault();
 

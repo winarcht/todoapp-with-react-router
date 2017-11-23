@@ -1,3 +1,8 @@
+/**
+ * The list of filters.
+ * When clicked, call the parent handler to set the selected filter.
+ * see "setFilter" in App.js.
+ */
 import React, { Component } from 'react';
 
 import FilterLink from './FilterLink';

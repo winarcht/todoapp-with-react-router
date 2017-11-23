@@ -1,3 +1,9 @@
+/**
+ * A status bar displaying message based on the selected filter:
+ *   1. If "Active" is selected, show "... task(s) left".
+ *   2. If "Done" is selected, show "... task(s) done".
+ *   3. If "All" is selected, show "Total: ... task(s)".
+ */
 import React, { Component } from 'react';
 
 import { FILTERS } from './../Conf.js';
